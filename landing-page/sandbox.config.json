@@ -1,0 +1,32 @@
+{
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "browser",
+  "template": "node",
+  "container": {
+    "port": 3000,
+    "startScript": "start",
+    "node": "18"
+  },
+  "showAmazonTag": false,
+  "showCountingSell": false,
+  "showBuyAudiobookButton": false,
+  "sections": {
+    "showBuyAudiobook": false,
+    "showDownloadFreeChapter": false,
+    "showAboutAuthor": true
+  },
+  "seo": {
+    "title": "Worldwide Banned Books | Talesio",
+    "description": "Talesio is an independent platform dedicated to sharing banned books and audio subliminals from around the world. Now available for everyone.",
+    "canonical": "https://talesio.xyz"
+  },
+  "theme": {
+    "color": "#ff04db"
+  },
+  "author": {
+    "name": "Emani Caric",
+    "email": "contact@talesio.xyz",
+    "location": "Emani Caric"
+  }
+}

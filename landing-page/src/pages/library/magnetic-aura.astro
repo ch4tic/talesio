@@ -1,0 +1,16 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/MagneticAura.astro';
+
+const books = [0, 0, 0, 0];
+const metadata = {
+  title: 'Magnetic Aura | Bookria',
+  ignoreTitleTemplate: true,
+};
+const cta_url = 'https://takeshim.gumroad.com/l/magneticauraebook';
+---
+
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+  
+</Layout>

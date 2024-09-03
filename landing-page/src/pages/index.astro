@@ -1,0 +1,188 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: 'Worldwide Banned Books | Talesio',
+  ignoreTitleTemplate: true,
+};
+
+import Headline from '~/components/ui/Headline.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const books = [
+  { page_url: '/library/magnetic-aura', img_url: '/MagneticAura.png' },
+  { page_url: '/library/arcane-stance', img_url: '/ArcaneStance.png' },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View Our Library',
+
+        target: '_blank',
+        icon: 'tabler:arrow-down',
+        id: 'scroll-button',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">The </span><span class="text-book-theme"
+        > Forbidden Knowledge</span><span> Library</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Talesio</span><span> is an independent platform dedicated to sharing banned books and audio subliminals from around the world. Now available for everyone.</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Books', amount: '2' },
+      { title: 'Sales', amount: '17.8K' },
+      { title: 'Audio Subliminals', amount: '3' },
+    ]}
+  />
+  <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
+    <Headline title={'Books Will Be Removed Soon'} subtitle={"Due To Their Controversy & Power"} />
+    <div id="books-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
+      {
+        books.map((item) => (
+          <div class="mx-auto md:mx-0 w-2/3 md:w-64  flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 ">
+            <a href={item.page_url}>
+              <div>
+                <img
+                  class="mx-auto w-60 rounded-md"
+                  style="aspect-ratio: 3 / 4;"
+                  src={item.img_url}
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
+                  alt="Picture showcasing client wins and Success Stories"
+                />
+              </div>
+              <div>
+                <a
+                  href={item.page_url}
+                  class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
+                >
+                  Read Now
+                </a>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Broaden Your Perspective',
+        description:
+          'Gain insights into diverse cultures, and viewpoints that challenge mainstream narratives and expand your knowledge.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Support Free Expression',
+        description:
+          'By reading these banned books, you stand up for the freedom of speech and the right to access uncensored literature.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Uncover Hidden Knowledge',
+        description:
+          "Discover powerful, thought-provoking stories that were suppressed or hidden from the public, offering unique knowledge.",
+        icon: 'tabler:coin',
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="What Others Said..."
+    testimonials={[
+      {
+        testimonial: `Talesio is a treasure trove of literature that I never knew existed. The stories I've found here are eye-opening and deeply impactful. It's refreshing to read books that aren't afraid to challenge norms!`,
+        name: 'Anna Wright',
+        job: 'Source: Gumroad',
+        image: {
+          img_url: '/Anonymous.jpeg',
+          alt: 'Anna Wright Image',
+        },
+      },
+      {
+        testimonial: `I’ve always been curious about banned books, and Talesio makes it so easy to find them all in one place. Every book I’ve read so far has left a lasting impression on me and my friends.`,
+        name: 'Laura Mitchell',
+        job: 'Source: Email',
+        image: {
+          img_url: '/Anonymous.jpeg',
+          alt: 'Laura Mitchell Image',
+        },
+      },
+      {
+        testimonial: `Talesio offers a unique collection that you won’t find anywhere else. Reading these banned books has given me a new perspective on history and culture. It’s an incredible experience.`,
+        name: 'David Parker',
+        job: 'Source: YouTube',
+        image: {
+          img_url: '/Anonymous.jpeg',
+          alt: 'David Parker Image',
+        },
+      },
+    ]}
+    
+    callToAction={{
+      target: '_blank',
+      text: 'More testimonials...',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+  <!-- <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Get template",
+        href: "https://github.com/onwidget/astrowind",
+        target: "_blank",
+        icon: "tabler:download",
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">Tailwind CSS</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br
+        class="hidden md:inline"
+      />Don't waste more time! :P
+    </Fragment>
+  </CallToAction> -->
+</Layout>
+
+<script>
+  document.getElementById('scroll-button').addEventListener('click', function () {
+    document.getElementById('books-container').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
