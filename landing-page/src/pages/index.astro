@@ -29,7 +29,6 @@ const books = [
       {
         variant: 'primary',
         text: 'View Our Library',
-
         target: '_blank',
         icon: 'tabler:arrow-down',
         id: 'scroll-button',
@@ -37,13 +36,13 @@ const books = [
     ]}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">The </span><span class="text-book-theme"
-        > Forbidden Knowledge</span><span> Library</span>
+      <span class="text-accent dark:text-white highlight">Explore </span><span class="text-book-theme"
+        > Banned Books</span><span> at Talesio</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Talesio</span><span> is an independent platform dedicated to sharing banned books and audio subliminals from around the world. Now available for everyone.</span>
+        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books and audio subliminals from around the world. Available to everyone.</span>
     </Fragment>
   </Hero>
 
@@ -51,13 +50,15 @@ const books = [
 
   <Stats
     stats={[
-      { title: 'Books', amount: '2' },
-      { title: 'Sales', amount: '17.8K' },
+      { title: 'Banned Books', amount: '2' },
+      { title: 'Total Downloads', amount: '17.8K' },
       { title: 'Audio Subliminals', amount: '3' },
     ]}
   />
+
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'Books Will Be Removed Soon'} subtitle={"Due To Their Controversy & Power"} />
+    <Headline title={'Books Will Be Removed Soon'} subtitle={"Explore These Powerful Titles While You Can"} />
+
     <div id="books-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
       {
         books.map((item) => (
@@ -68,8 +69,9 @@ const books = [
                   class="mx-auto w-60 rounded-md"
                   style="aspect-ratio: 3 / 4;"
                   src={item.img_url}
+                  alt={item.alt}
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
-                  alt="Picture showcasing client wins and Success Stories"
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -86,100 +88,79 @@ const books = [
       }
     </div>
   </div>
+
   <Content
     isAfterContent
     items={[
       {
         title: 'Broaden Your Perspective',
         description:
-          'Gain insights into diverse cultures, and viewpoints that challenge mainstream narratives and expand your knowledge.',
+          'Discover diverse cultures and viewpoints that challenge mainstream narratives through banned literature.',
         icon: 'tabler:school',
       },
       {
         title: 'Support Free Expression',
         description:
-          'By reading these banned books, you stand up for the freedom of speech and the right to access uncensored literature.',
+          'By reading banned books, you stand up for freedom of speech and access to uncensored literature.',
         icon: 'tabler:speakerphone',
       },
       {
         title: 'Uncover Hidden Knowledge',
         description:
-          "Discover powerful, thought-provoking stories that were suppressed or hidden from the public, offering unique knowledge.",
+          "Gain insight from powerful stories that were suppressed, offering unique perspectives.",
         icon: 'tabler:coin',
       }
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      alt: 'Banned Books - Talesio Platform',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why Read Banned Books?</h3>
     </Fragment>
   </Content>
 
   <Testimonials
-    title="What Others Said..."
+    title="What Readers Are Saying..."
     testimonials={[
       {
-        testimonial: `Talesio is a treasure trove of literature that I never knew existed. The stories I've found here are eye-opening and deeply impactful. It's refreshing to read books that aren't afraid to challenge norms!`,
+        testimonial: `Talesio is a treasure trove of hidden knowledge. The books here challenge my worldview and have broadened my perspective.`,
         name: 'Anna Wright',
-        job: 'Source: Gumroad',
+        job: 'Verified Reader',
         image: {
           img_url: '/Anonymous.jpeg',
-          alt: 'Anna Wright Image',
+          alt: 'Reader Anna Wright',
         },
       },
       {
-        testimonial: `I’ve always been curious about banned books, and Talesio makes it so easy to find them all in one place. Every book I’ve read so far has left a lasting impression on me and my friends.`,
+        testimonial: `I've always been curious about banned books, and Talesio makes them accessible. These titles are unlike anything you’ll find in mainstream libraries.`,
         name: 'Laura Mitchell',
-        job: 'Source: Email',
+        job: 'Verified Reader',
         image: {
           img_url: '/Anonymous.jpeg',
-          alt: 'Laura Mitchell Image',
+          alt: 'Reader Laura Mitchell',
         },
       },
       {
-        testimonial: `Talesio offers a unique collection that you won’t find anywhere else. Reading these banned books has given me a new perspective on history and culture. It’s an incredible experience.`,
+        testimonial: `Talesio offers a unique and important collection. Reading these works has given me a fresh perspective on global issues.`,
         name: 'David Parker',
-        job: 'Source: YouTube',
+        job: 'Verified Reader',
         image: {
           img_url: '/Anonymous.jpeg',
-          alt: 'David Parker Image',
+          alt: 'Reader David Parker',
         },
       },
     ]}
     
     callToAction={{
       target: '_blank',
-      text: 'More testimonials...',
+      text: 'More reviews...',
       href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:chevron-right',
     }}
   />
-  <!-- <CallToAction
-    actions={[
-      {
-        variant: "primary",
-        text: "Get template",
-        href: "https://github.com/onwidget/astrowind",
-        target: "_blank",
-        icon: "tabler:download",
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span
-        class="sm:whitespace-nowrap">Tailwind CSS</span
-      >
-    </Fragment>
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br
-        class="hidden md:inline"
-      />Don't waste more time! :P
-    </Fragment>
-  </CallToAction> -->
 </Layout>
 
 <script>

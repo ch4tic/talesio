@@ -2,15 +2,41 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroSection from '~/components/nestedPages/ArcaneStance.astro';
 
-const books = [0, 0, 0, 0];
 const metadata = {
-  title: 'Arcane Stance | Bookria',
+  title: 'Arcane Stance eBook | Talesio',
+  description: 'Arcane Stance is one of the many banned books available on Talesio. Read this captivating, controversial book that challenges conventional thinking.',
   ignoreTitleTemplate: true,
 };
+
 const cta_url = 'https://takeshim.gumroad.com/l/arcanestance';
+
 ---
 
 <Layout metadata={metadata}>
   <HeroSection cta_url={cta_url} />
-  
+
+  <section>
+    <h2>About Arcane Stance</h2>
+    <p>Arcane Stance is a provocative book that delves into hidden truths and controversial ideas. Available now on Talesio, it has been banned in several countries due to its powerful, thought-provoking content.</p>
+    <a href="/library" class="internal-link">Discover more banned books in our library</a>
+  </section>
+
 </Layout>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Arcane Stance",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "Arcane Stance is a banned book available on Talesio. It discusses controversial and hidden truths.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>
