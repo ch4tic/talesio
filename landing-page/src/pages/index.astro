@@ -42,7 +42,7 @@ const books = [
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books and audio subliminals from around the world. Available to everyone.</span>
+        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. Available to everyone.</span>
     </Fragment>
   </Hero>
 
@@ -50,9 +50,9 @@ const books = [
 
   <Stats
     stats={[
-      { title: 'Banned Books', amount: '2' },
+      { title: 'Banned Books', amount: '3' },
       { title: 'Total Downloads', amount: '17.8K' },
-      { title: 'Audio Subliminals', amount: '3' },
+      { title: 'Authors', amount: '2' },
     ]}
   />
 
@@ -89,39 +89,7 @@ const books = [
     </div>
   </div>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Broaden Your Perspective',
-        description:
-          'Discover diverse cultures and viewpoints that challenge mainstream narratives through banned literature.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Support Free Expression',
-        description:
-          'By reading banned books, you stand up for freedom of speech and access to uncensored literature.',
-        icon: 'tabler:speakerphone',
-      },
-      {
-        title: 'Uncover Hidden Knowledge',
-        description:
-          "Gain insight from powerful stories that were suppressed, offering unique perspectives.",
-        icon: 'tabler:coin',
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Banned Books - Talesio Platform',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why Read Banned Books?</h3>
-    </Fragment>
-  </Content>
-
-  <Testimonials
+<Testimonials
     title="What Readers Are Saying..."
     testimonials={[
       {
