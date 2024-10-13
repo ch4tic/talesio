@@ -11,6 +11,11 @@ const metadata = {
 const cta_url = 'https://takeshim.gumroad.com/l/arcanestance';
 
 ---
+<div id="countdown" class="text-center py-8 text-white bg-red-600">
+  <h2 class="text-3xl font-bold">Magnetic Aura eBook Will Be Removed Soon!</h2>
+  <p class="text-xl">The site will shut down in:</p>
+  <div id="timer" class="text-4xl font-bold mt-4"></div>
+</div>
 
 <Layout metadata={metadata}>
   <HeroSection cta_url={cta_url} />
@@ -32,4 +37,31 @@ const cta_url = 'https://takeshim.gumroad.com/l/arcanestance';
     "name": "Talesio"
   }
 }
+</script>
+
+<script>
+  function countdown() {
+    const timerDisplay = document.getElementById('timer');
+    const now = new Date().getTime();
+    const endTime = now + (9 * 60 * 60 * 1000); 
+
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const distance = endTime - currentTime;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        timerDisplay.innerHTML = "Time's up!";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  countdown();
 </script>
