@@ -42,9 +42,16 @@ const books = [
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. Available to everyone.</span>
+        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. <br>Available to everyone.</span>
     </Fragment>
   </Hero>
+
+   <!-- Countdown Timer ******************* -->
+   <div id="countdown" class="text-center py-8 text-white bg-red-600">
+    <h2 class="text-3xl font-bold">These Books Will Be Removed Soon!</h2>
+    <p class="text-xl">The site will shut down in:</p>
+    <div id="timer" class="text-4xl font-bold mt-4"></div>
+  </div>
 
   <!-- Stats Widget ****************** -->
 
@@ -132,6 +139,38 @@ const books = [
 </Layout>
 
 <script>
+  document.getElementById('scroll-button').addEventListener('click', function () {
+    document.getElementById('books-container').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+<script>
+  // Countdown Timer Script for 13 hours
+  function countdown() {
+    const timerDisplay = document.getElementById('timer');
+    const now = new Date().getTime();
+    const endTime = now + (9 * 60 * 60 * 1000); // 13 hours from now
+
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const distance = endTime - currentTime;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        timerDisplay.innerHTML = "Time's up!";
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  countdown();
+
   document.getElementById('scroll-button').addEventListener('click', function () {
     document.getElementById('books-container').scrollIntoView({ behavior: 'smooth' });
   });
