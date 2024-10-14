@@ -15,7 +15,7 @@ import Headline from '~/components/ui/Headline.astro';
 import Content from '~/components/widgets/Content.astro';
 
 const books = [
-  { page_url: '/library/magnetic-aura', img_url: '/MagneticAura.png' },
+  { page_url: 'https://takeshim.gumroad.com/l/magneticauraebook', img_url: '/MagneticAura.png' },
   { page_url: '/library/arcane-stance', img_url: '/ArcaneStance.png' },
   { page_url: '/library/the-suppressed-education', img_url: '/TheSuppressedEducation.png' },
 ];
@@ -37,19 +37,19 @@ const books = [
   >
     <Fragment slot="title">
       <span class="text-accent dark:text-white highlight">Explore </span><span class="text-book-theme"
-        > Banned Books</span><span> at Talesio</span>
+        > Banned</span> Books</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. <br>Available to everyone.</span>
+        <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. <br>The site could be taken down any moment, hurry.</span>
     </Fragment>
   </Hero>
 
    <!-- Countdown Timer ******************* -->
    <div id="countdown" class="text-center py-8 text-white bg-red-600">
-    <h2 class="text-3xl font-bold">These Books Will Be Removed Soon!</h2>
-    <p class="text-xl">The site will shut down in:</p>
+    <h2 class="text-3xl font-bold">DISCOUNT CODE: talesio20</h2>
+    <p class="text-xl">The code will expire in:</p>
     <div id="timer" class="text-4xl font-bold mt-4"></div>
   </div>
 
@@ -64,7 +64,7 @@ const books = [
   />
 
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'Books Will Be Removed Soon'} subtitle={"Explore These Powerful Titles While You Can"} />
+    <Headline title={'Forbidden Books Library'} />
 
     <div id="books-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
       {
@@ -97,7 +97,7 @@ const books = [
   </div>
 
 <Testimonials
-    title="What Readers Are Saying..."
+    title="What Others Are Saying..."
     testimonials={[
       {
         testimonial: `Talesio is a treasure trove of hidden knowledge. The books here challenge my worldview and have broadened my perspective.`,
@@ -155,7 +155,7 @@ const books = [
 
     // If there's no 'endTime' in localStorage, set it to 13 hours from now
     if (!endTime) {
-      endTime = now + (9 * 60 * 60 * 1000); // 13 hours from now
+      endTime = now + (12 * 60 * 60 * 1000); // 13 hours from now
       localStorage.setItem('endTime', endTime);
     }
 
