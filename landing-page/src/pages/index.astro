@@ -12,12 +12,16 @@ const metadata = {
 };
 
 import Headline from '~/components/ui/Headline.astro';
-import Content from '~/components/widgets/Content.astro';
 
 const books = [
-  { page_url: 'https://takeshim.gumroad.com/l/magneticauraebook', img_url: '/MagneticAura.png' },
-  { page_url: 'https://takeshim.gumroad.com/l/arcanestance', img_url: '/ArcaneStance.png' },
-  { page_url: 'https://takeshim.gumroad.com/l/thesuppressededucation', img_url: '/TheSuppressedEducation.png' },
+  { title: 'Magnetic Aura', page_url: 'https://takeshim.gumroad.com/l/magneticauraebook', img_url: '/MagneticAura.png' },
+  { title: 'Arcane Stance', page_url: 'https://takeshim.gumroad.com/l/arcanestance', img_url: '/ArcaneStance.png' },
+  { title: 'Suppressed Education', page_url: 'https://takeshim.gumroad.com/l/thesuppressededucation', img_url: '/TheSuppressedEducation.png' },
+  { title: 'Energy Codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png' },
+  { title: 'Human Health Guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png' },
+  { title: 'Book of Wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png' },
+  { title: 'Alkaline Awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png' },
+  { title: 'The Wisdom Bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png' },
 ];
 ---
 
@@ -74,12 +78,15 @@ const books = [
               <div>
                 <img
                   class="mx-auto w-60 rounded-md"
-                  style="aspect-ratio: 3 / 4;"
+                  style="aspect-ratio: 4 / 3;"
                   src={item.img_url}
-                  alt={item.alt}
+                  alt={item.title}
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
                   loading="lazy"
                 />
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3> <!-- Added title -->
               </div>
               <div>
                 <a
