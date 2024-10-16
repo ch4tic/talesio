@@ -1,17 +1,20 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-
 import Stats from '~/components/widgets/Stats.astro';
+import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'Worldwide Banned Books | Talesio',
   ignoreTitleTemplate: true,
 };
 
-import Headline from '~/components/ui/Headline.astro';
+const callToAction = {
+  href: '#books-container',
+  target: '_self', 
+  text: 'Take Action Now', 
+};
 
 const books = [
   { title: 'Magnetic Aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png' },
@@ -23,11 +26,43 @@ const books = [
   { title: 'Alkaline Awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png' },
   { title: 'The Wisdom Bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png' },
 ];
+
+const testimonials = [
+  {
+    testimonial: `I stumbled upon Talesio while searching for banned books, and I'm so glad I did! The collection is impressive, covering titles I never knew existed. The site is user-friendly, making it super easy to browse and download. Plus, I love the idea of supporting the freedom to read. If you're into thought-provoking literature, definitely check this place out.`,
+    name: 'Anna Wright',
+    job: 'Verified Reader',
+    image: {
+      img_url: '/Anonymous.jpeg',
+      alt: 'Reader Anna Wright',
+    },
+    rating: 5,
+  },
+  {
+    testimonial: `Talesio is a gem! I was blown away by the variety of banned books they have. It's not just about the books, though; the whole vibe of the site is really inviting. Downloading was a breeze, and the selection has opened my eyes to some amazing stories. Highly recommend for anyone who loves to read something a little outside the norm!`,
+    name: 'Laura Mitchell',
+    job: 'Verified Reader',
+    image: {
+      img_url: '/Anonymous.jpeg',
+      alt: 'Reader Laura Mitchell',
+    },
+    rating: 4,
+  },
+  {
+    testimonial: `I can’t say enough good things about Talesio! The library of banned books is fantastic, with titles that really challenge the status quo. I appreciate how easy it is to navigate the site, and the downloads are super quick. It's refreshing to find a platform that champions these important voices. If you're a reader looking for something different, this is the place to go!`,
+    name: 'David Parker',
+    job: 'Verified Reader',
+    image: {
+      img_url: '/Anonymous.jpeg',
+      alt: 'Reader David Parker',
+    },
+    rating: 5,
+  },
+];
+
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
       {
@@ -40,24 +75,21 @@ const books = [
     ]}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">Explore </span><span class="text-book-theme"
-        > Banned</span> Books</span>
+      <span class="text-accent dark:text-white highlight">Explore </span>
+      <span class="text-book-theme"> Banned</span> Books
     </Fragment>
-
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
         <span class="font-semibold">Talesio</span><span> hosts a wide collection of banned books from around the world. <br>The site could be taken down any moment, hurry.</span>
+      </span>
     </Fragment>
   </Hero>
 
-   <!-- Countdown Timer ******************* -->
-   <div id="countdown" class="text-center py-8 text-white bg-red-600">
+  <div id="countdown" class="text-center py-8 text-white bg-red-600">
     <h2 class="text-3xl font-bold">DISCOUNT: TALESIO20</h2>
     <p class="text-xl">The code will expire in:</p>
     <div id="timer" class="text-4xl font-bold mt-4"></div>
   </div>
-
-  <!-- Stats Widget ****************** -->
 
   <Stats
     stats={[
@@ -71,38 +103,72 @@ const books = [
     <Headline title={'Forbidden Books Library'} />
 
     <div id="books-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
-      {
-        books.map((item) => (
-          <div class="mx-auto md:mx-0 w-2/3 md:w-64  flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 ">
-            <a href={item.page_url}>
-              <div>
-                <img
-                  class="mx-auto w-60 rounded-md"
-                  style="aspect-ratio: 4 / 3;"
-                  src={item.img_url}
-                  alt={item.title}
-                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
-                  loading="lazy"
-                />
-              </div>
-              <div class="text-center mt-4">
-                <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3> <!-- Added title -->
-              </div>
-              <div>
-                <a
-                  href={item.page_url}
-                  class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
-                >
-                  Read Now
-                </a>
-              </div>
-            </a>
-          </div>
-        ))
-      }
+      {books.map((item) => (
+        <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 ">
+          <a href={item.page_url}>
+            <div>
+              <img
+                class="mx-auto w-60 rounded-md"
+                style="aspect-ratio: 4 / 3;"
+                src={item.img_url}
+                alt={item.title}
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
+                loading="lazy"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
+            </div>
+            <div>
+              <a
+                href={item.page_url}
+                class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
+              >
+                Read Now
+              </a>
+            </div>
+          </a>
+        </div>
+      ))}
     </div>
   </div>
 
+  <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
+    <Headline title={'What Readers Are Saying...'} />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonials.map((testimonial) => (
+        <div class="flex flex-col p-6 rounded-lg shadow-md bg-white dark:bg-slate-900">
+          <div class="flex items-center mb-4">
+            <img src={testimonial.image.img_url} alt={testimonial.image.alt} class="w-12 h-12 rounded-full mr-3" />
+            <div>
+              <h4 class="text-lg font-semibold text-black dark:text-white">{testimonial.name}</h4>
+              <p class="text-sm text-gray-500">{testimonial.job}</p>
+              <div class="flex mt-1">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <svg key={i} class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
+                    <polygon points="10 15.27 16.18 20 14.54 12.97 20 8.36 12.91 8.13 10 1 7.09 8.13 0 8.36 5.46 12.97 3.82 20 10 15.27" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">{testimonial.testimonial}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 text-center">
+      <a 
+        href={callToAction.href} 
+        target={callToAction.target} 
+        class="text-lg font-semibold text-book-theme hover:underline" 
+        aria-label={callToAction.text}
+      >
+        {callToAction.text}
+        <span class="ml-2">{callToAction.icon}</span>
+      </a>
+    </div>
+  </div>
+</Layout>
 
 <script>
   document.getElementById('scroll-button').addEventListener('click', function () {
