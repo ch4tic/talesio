@@ -177,41 +177,38 @@ const testimonials = [
 </script>
 
 <script>
-  // Persistent Countdown Timer Script for 13 hours
   function countdown() {
     const timerDisplay = document.getElementById('timer');
+
+    // Get the current UTC time
     const now = new Date().getTime();
+    
+    // Calculate the end time (6 hours from now)
+    const endTime = new Date(now + (6 * 60 * 60 * 1000)).getTime();
 
-    // Check if the 'endTime' is already stored in localStorage
-    let endTime = localStorage.getItem('endTime');
-
-    // If there's no 'endTime' in localStorage, set it to 13 hours from now
-    if (!endTime) {
-      endTime = now + (6 * 60 * 60 * 1000); // 13 hours from now
-      localStorage.setItem('endTime', endTime);
-    }
-
-    // Convert the stored string back into a number
-    endTime = parseInt(endTime, 10);
+    // Store the end time in local storage as UTC
+    localStorage.setItem('endTime', endTime);
 
     const interval = setInterval(() => {
+      // Get the current UTC time
       const currentTime = new Date().getTime();
-      const distance = endTime - currentTime;
+      
+      // Retrieve the stored end time
+      const storedEndTime = parseInt(localStorage.getItem('endTime'), 10);
+      
+      const distance = storedEndTime - currentTime;
 
-      // If the countdown is over, clear the interval and display "Time's up!"
       if (distance < 0) {
         clearInterval(interval);
         timerDisplay.innerHTML = "Time's up!";
-        localStorage.removeItem('endTime'); // Optionally clear the end time from localStorage
+        localStorage.removeItem('endTime'); 
         return;
       }
 
-      // Calculate hours, minutes, and seconds remaining
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Display the countdown
       timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
   }
