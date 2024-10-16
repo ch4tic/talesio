@@ -17,14 +17,14 @@ const callToAction = {
 };
 
 const books = [
-  { title: 'Magnetic Aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png' },
-  { title: 'Arcane Stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png' },
-  { title: 'Suppressed Education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png' },
-  { title: 'Energy Codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png' },
-  { title: 'Human Health Guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png' },
-  { title: 'Book of Wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png' },
-  { title: 'Alkaline Awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png' },
-  { title: 'The Wisdom Bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png' },
+  { title: 'Magnetic Aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
+  { title: 'Arcane Stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
+  { title: 'Suppressed Education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png', description: 'Detailed book full of essential knowledge overlooked by traditional education systems.' },
+  { title: 'Energy Codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png', description: 'Guide to manifesting abundance and positivity and unique ways of raising vibrational frequency.' },
+  { title: 'Human Health Guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png', description: 'Book teaching essential foods, oils, and practices for enhancing vitality and overall well-being.' },
+  { title: 'Book of Wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png', description: 'Insights and esoteric knowledge to awaken your wisdom and connect with the universe.' },
+  { title: 'Alkaline Awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png', description: 'Guide with over 126 recipes, in-depth knowledge on alkalinity, fasting, and detoxification.' },
+  { title: 'The Wisdom Bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png', description: 'Bundle with the Book of Wisdom, Human Health Guide and Manifestation Mastery.' },
 ];
 
 const testimonials = [
@@ -118,6 +118,7 @@ const testimonials = [
             </div>
             <div class="text-center mt-4">
               <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-300 mt-1">{item.description}</p> 
             </div>
             <div>
               <a
