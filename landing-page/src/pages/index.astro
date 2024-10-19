@@ -92,8 +92,8 @@ const testimonials = [
   </Hero>
 
   <div id="countdown" class="text-center py-8 text-white bg-red-600">
-    <h2 class="text-3xl font-bold">20% OFF! 'TALESIO20'</h2> 
-    <p class="text-xl">The sale ends in:</p>
+    <h2 class="text-3xl font-bold">DISCOUNT: 'TALESIO20'</h2> 
+    <p class="text-xl">Code expires in:</p>
     <div id="timer" class="text-4xl font-bold mt-4"></div>
   </div>
 
@@ -233,7 +233,7 @@ const testimonials = [
     const now = new Date().getTime();
     
     // Calculate the end time (6 hours from now)
-    const endTime = new Date(now + (6 * 60 * 60 * 1000)).getTime();
+    const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
 
     // Store the end time in local storage as UTC
     localStorage.setItem('endTime', endTime);

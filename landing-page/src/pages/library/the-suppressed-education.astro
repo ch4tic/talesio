@@ -51,7 +51,7 @@ const cta_url = 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a
 
     // If there's no 'endTime' in localStorage, set it to 13 hours from now
     if (!endTime) {
-      endTime = now + (12 * 60 * 60 * 1000); // 13 hours from now
+      const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
       localStorage.setItem('endTime', endTime);
     }
 
