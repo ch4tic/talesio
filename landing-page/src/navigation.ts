@@ -60,6 +60,10 @@ export const headerData = {
         }
       ],
     },
+    {
+      text: 'About Us',  
+      href: getPermalink('/about'),
+    }
   ],
 };
 

@@ -1,0 +1,136 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'About Us | Talesio',
+  ignoreTitleTemplate: true,
+};
+
+const callToAction = {
+  href: '/#books-container', // Replace with your store's URL
+  target: '_self', 
+  text: 'Take Action Now', 
+};
+
+---
+
+<Layout metadata={metadata}>
+    <section class="text-center py-10 md:py-16"> {/* Adjusted padding */}
+      <Headline title={'About Us'} />
+  
+      <div class="md:mx-auto w-full max-w-3xl py-6 text-gray-700 dark:text-gray-300"> {/* Reduced padding */}
+        <p class="text-lg">
+          We won’t bore you with long introductions, but here’s what you need to know: this project is run by a small, passionate team determined to bring valuable content to you. We're not interested in following the crowd or letting outside forces restrict access to life-changing information. That’s why we’ve made it our mission to ensure these materials are available to those who truly seek them.<br /><br />
+  
+          Our collection is filled with content that might not always sit well with the mainstream, but we believe in the power of knowledge and the transformation it can bring. While we can’t guarantee we won’t face challenges, we’re committed to keeping this site running as long as possible. If you're in a position to support us, now is the perfect time to explore our unique offerings.<br /><br />
+  
+          Many have already experienced profound changes from what we provide, and that drives us to continue. But here's the thing — the less attention we draw to ourselves, the better. So we kindly ask you not to spread the word too widely. This isn’t for everyone, and we prefer to keep it that way.<br /><br />
+  
+          Some of what we offer carries risks, and you should approach it with an open but careful mind. Our site could be taken down at any moment, so don't wait too long. Seize the chance to grab what you can before it's too late.<br /><br />
+  
+          It’s time for something different.
+        </p>
+      </div>
+
+      <div id="countdown" class="text-center py-8 text-white bg-red-600">
+        <h2 class="text-3xl font-bold">20% OFF! 'TALESIO20'</h2> 
+        <p class="text-xl">The sale ends in:</p>
+        <div id="timer2" class="text-4xl font-bold mt-4"></div>
+      </div>
+  
+      <div class="mt-8 text-center">
+        <a 
+          href={callToAction.href} 
+          target={callToAction.target} 
+          class="text-lg font-semibold text-book-theme hover:underline" 
+          aria-label={callToAction.text}
+        >
+          {callToAction.text}
+          <span class="ml-2">{callToAction.icon}</span>
+        </a>
+      </div>
+    </section>
+  </Layout>
+
+
+<script>
+    function countdown() {
+      const timerDisplay = document.getElementById('timer');
+  
+      // Get the current UTC time
+      const now = new Date().getTime();
+      
+      // Calculate the end time (6 hours from now)
+      const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
+  
+      // Store the end time in local storage as UTC
+      localStorage.setItem('endTime', endTime);
+  
+      const interval = setInterval(() => {
+        // Get the current UTC time
+        const currentTime = new Date().getTime();
+        
+        // Retrieve the stored end time
+        const storedEndTime = parseInt(localStorage.getItem('endTime'), 10);
+        
+        const distance = storedEndTime - currentTime;
+  
+        if (distance < 0) {
+          clearInterval(interval);
+          timerDisplay.innerHTML = "Time's up!";
+          localStorage.removeItem('endTime'); 
+          return;
+        }
+  
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+  
+    countdown();
+  </script>
+  
+  <script>
+    function countdown() {
+      const timerDisplay = document.getElementById('timer2');
+  
+      // Get the current UTC time
+      const now = new Date().getTime();
+      
+      // Calculate the end time (6 hours from now)
+      const endTime = new Date(now + (6 * 60 * 60 * 1000)).getTime();
+  
+      // Store the end time in local storage as UTC
+      localStorage.setItem('endTime', endTime);
+  
+      const interval = setInterval(() => {
+        // Get the current UTC time
+        const currentTime = new Date().getTime();
+        
+        // Retrieve the stored end time
+        const storedEndTime = parseInt(localStorage.getItem('endTime'), 10);
+        
+        const distance = storedEndTime - currentTime;
+  
+        if (distance < 0) {
+          clearInterval(interval);
+          timerDisplay.innerHTML = "Time's up!";
+          localStorage.removeItem('endTime'); 
+          return;
+        }
+  
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+  
+    countdown();
+  </script>
+  
