@@ -3,7 +3,7 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Books',
+      text: 'E-Books',
       links: [
         {
           text: 'Magnetic Aura',
