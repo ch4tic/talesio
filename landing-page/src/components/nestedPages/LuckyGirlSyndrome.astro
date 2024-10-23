@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+const { cta_url } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unlock your potential with Lucky Girl Syndrome Subliminals. Attract love, success, and good fortune effortlessly!">
+    <meta name="keywords" content="Lucky Girl Syndrome, subliminals, manifestation, abundance, audio program, personal growth">
+    <meta property="og:title" content="Lucky Girl Syndrome Subliminals">
+    <meta property="og:description" content="Transform your life with Lucky Girl Syndrome Subliminals. Effortlessly attract the love, success, and luck you desire!">
+    <meta property="og:image" content="/Lucky.png">
+    <meta property="og:url" content={cta_url}>
+    <meta property="og:type" content="audio">
+    <title>Lucky Girl Syndrome Subliminals</title>
+    <link rel="canonical" href={cta_url}>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main class="mx-auto max-w-7xl px-4 mb-8 mt-12 sm:mt-12 sm:mb-12 sm:px-6 md:mt-32 md:mb-20 xl:mt-23 xl:mb-24">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="mb-12 md:max-w-1xl md:mx-auto lg:col-span-8">
+          <h1
+            class="mt-1 text-5xl tracking-tight leading-16 font-extrabold sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl uppercase"
+          ><span class="underline">Lucky Girl Syndrome Subliminals</span>
+          </h1>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            Are you struggling to manifest your dream life? The <b>Lucky Girl Syndrome Subliminals</b> are designed to help you effortlessly attract good fortune, love, and success. This isn't just another audio track; it’s your personal gateway to becoming the “lucky girl” who always gets what she desires.</p>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            Why choose Lucky Girl Syndrome Subliminals? This audio program is your ultimate solution if you are tired of bad things happening, struggle with manifestation, or simply want more luck in life.</p>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            For optimal results, listen to the subliminals before bed, ideally five times a week. Don't miss your chance to transform your life!</p>
+
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div>
+                  <a
+                    href={cta_url}
+                    target="_blank"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition duration-300 ease-in-out md:py-4 md:text-lg md:px-10"
+                  >
+                    Get It Now
+                  </a>
+                </div>
+              </div>
+        </div>
+
+        <div
+          class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-4 lg:flex lg:items-center"
+        >
+          <a class="subliminals-container" href={cta_url}>
+            <div class="subliminals">
+              <Image
+                src="/Lucky.png"
+                width={300}
+                height={300}
+                alt="Lucky Girl Syndrome Subliminals Cover"
+                format="avif"
+                loading="eager"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

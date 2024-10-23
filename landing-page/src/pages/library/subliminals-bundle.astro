@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/SubliminalsBundle.astro';
+
+const metadata = {
+  title: 'The Ultimate Subliminals Bundle | Talesio',
+  description: 'The Ultimate Subliminals Bundle is one of the many banned subliminals available on Talesio. Listen to this this captivating, controversial audio that challenges conventional thinking.',
+  ignoreTitleTemplate: true,
+};
+
+const cta_url = 'https://shop.beacons.ai/talesio/343699d1-2c2a-4415-ab5f-38eb4c998fd0';
+
+---
+<div id="countdown" class="text-center py-8 text-white bg-red-600">
+  <h2 class="text-3xl font-bold">20% OFF! 'TALESIO20'</h2> 
+  <p class="text-xl">The sale ends in:</p>
+  <div id="timer" class="text-4xl font-bold mt-4"></div>
+</div>
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+</Layout>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Ultimate Subliminals Bundle",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "The Ultimate Subliminals Bundle is a banned bundle of multiple audio subliminals available on Talesio.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>
+
+<script>
+  function countdown() {
+    const timerDisplay = document.getElementById('timer');
+    const now = new Date().getTime();
+
+    // Check if the 'endTime' is already stored in localStorage
+    let endTime = localStorage.getItem('endTime');
+
+    // If there's no 'endTime' in localStorage, set it to 13 hours from now
+    if (!endTime) {
+      const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
+      localStorage.setItem('endTime', endTime);
+    }
+
+    // Convert the stored string back into a number
+    endTime = parseInt(endTime, 10);
+
+    const interval = setInterval(() => {
+    const currentTime = new Date().getTime();
+    const distance = endTime - currentTime;
+
+      // If the countdown is over, clear the interval and display "Time's up!"
+      if (distance < 0) {
+        clearInterval(interval);
+        timerDisplay.innerHTML = "Time's up!";
+        localStorage.removeItem('endTime'); // Optionally clear the end time from localStorage
+        return;
+      }
+
+      // Calculate hours, minutes, and seconds remaining
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  countdown();
+</script>

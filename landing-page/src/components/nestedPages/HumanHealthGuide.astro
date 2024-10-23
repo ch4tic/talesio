@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+const { cta_url } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the secrets to maintaining health and vitality with the Human Health Guide 2.0. Unlock insights into beneficial foods and health tips.">
+    <meta name="keywords" content="Human Health Guide 2.0, health tips, vitality, wellness, nutrition, fasting methods, alkaline herbs, digital product">
+    <meta property="og:title" content="Human Health Guide 2.0">
+    <meta property="og:description" content="Unlock the secrets to health and vitality with the Human Health Guide 2.0. Learn about beneficial foods and health tips for a happier life.">
+    <meta property="og:image" content="/HumanHealthGuide.png">
+    <meta property="og:url" content={cta_url}>
+    <meta property="og:type" content="book">
+    <title>Human Health Guide 2.0</title>
+    <link rel="canonical" href={cta_url}>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main class="mx-auto max-w-7xl px-4 mb-8 mt-12 sm:mt-12 sm:mb-12 sm:px-6 md:mt-32 md:mb-20 xl:mt-23 xl:mb-24">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="mb-12 md:max-w-1xl md:mx-auto lg:col-span-8">
+          <h1
+            class="mt-1 text-5xl tracking-tight leading-16 font-extrabold sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl uppercase"
+          ><span class="underline">Human Health Guide 2.0</span>
+          </h1>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            The <b>Human Health Guide 2.0</b> is your comprehensive resource for maintaining health and vitality. This digital guide provides essential insights into the products, oils, nuts, fruits, vegetables, grains, and mushrooms to avoid, empowering you to make informed choices for a healthier life.</p>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            Within its pages, you’ll uncover tips, hacks, and wisdom on enhancing your well-being, including methods for improving vision, fasting techniques, and the benefits of alkaline herbs for health. The Human Health Guide 2.0 equips you with the knowledge to revitalize your life and cultivate happiness.</p>
+
+          <p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
+            This is a digital product (PDF), and you will receive an email with download instructions. Digital goods are non-refundable.</p>
+
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+              <div>
+                <a
+                  href={cta_url}
+                  target="_blank"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition duration-300 ease-in-out md:py-4 md:text-lg md:px-10"
+                >
+                  Get It Now
+                </a>
+              </div>
+            </div>
+        </div>
+
+        <div
+          class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-4 lg:flex lg:items-center"
+        >
+          <a class="book-container" href={cta_url}>
+            <div class="book">
+              <Image
+                src="/HumanHealthGuide.png"
+                width={300}
+                height={600}
+                alt="Human Health Guide 2.0 PDF Cover"
+                format="avif"
+                loading="eager"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

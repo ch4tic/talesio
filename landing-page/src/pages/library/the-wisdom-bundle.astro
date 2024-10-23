@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/TheWisdomBundle.astro';
+
+const metadata = {
+  title: 'The Wisdom Bundle | Talesio',
+  description: 'The Wisdom Bundle is one of the many products available on Talesio. Gain access to multiple banned books and expand your knowledge.',
+  ignoreTitleTemplate: true,
+};
+
+const cta_url = 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA';
+
+---
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+</Layout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Wisdom Bundle",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "The Wisdom Bundle is a banned product available on Talesio. It provides multiple books under the price of whone whihc hold controversial and hidden truths.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>

@@ -16,21 +16,21 @@ const callToAction = {
 };
 
 const books = [
-  { title: 'Magnetic Aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
-  { title: 'Arcane Stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
-  { title: 'Suppressed Education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png', description: 'Detailed book full of essential knowledge overlooked by traditional education systems.' },
-  { title: 'Energy Codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png', description: 'Guide to manifesting abundance and positivity and unique ways of raising vibrational frequency.' },
-  { title: 'Human Health Guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png', description: 'Book teaching essential foods, oils, and practices for enhancing vitality and overall well-being.' },
-  { title: 'Book of Wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png', description: 'Insights and esoteric knowledge to awaken your wisdom and connect with the universe.' },
-  { title: 'Alkaline Awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png', description: 'Guide with over 126 recipes, in-depth knowledge on alkalinity, fasting, and detoxification.' },
-  { title: 'The Wisdom Bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png', description: 'Bundle with the Book of Wisdom, Human Health Guide and Manifestation Mastery.' },
+  { title: 'Magnetic Aura', page_url2:'/library/magnetic-aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
+  { title: 'Arcane Stance', page_url2:'/library/arcane-stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
+  { title: 'Suppressed Education', page_url2:'/library/the-suppressed-education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png', description: 'Detailed book full of essential knowledge overlooked by traditional education systems.' },
+  { title: 'Energy Codes', page_url2:'/library/energy-codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png', description: 'Guide to manifesting abundance and positivity and unique ways of raising vibrational frequency.' },
+  { title: 'Human Health Guide', page_url2:'/library/human-health-guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png', description: 'Book teaching essential foods, oils, and practices for enhancing vitality and overall well-being.' },
+  { title: 'Book of Wisdom', page_url2:'/library/book-of-wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png', description: 'Insights and esoteric knowledge to awaken your wisdom and connect with the universe.' },
+  { title: 'Alkaline Awakening', page_url2:'/library/alkaline-awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png', description: 'Guide with over 126 recipes, in-depth knowledge on alkalinity, fasting, and detoxification.' },
+  { title: 'The Wisdom Bundle', page_url2:'/library/the-wisdom-bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png', description: 'Bundle with the Book of Wisdom, Human Health Guide and Manifestation Mastery.' },
 ];
 
 const subliminals = [
-  { title: 'Lucky Girl Syndrome', page_url: 'https://shop.beacons.ai/talesio/8c7b3857-1c69-4935-8a71-a9f484b1f23c', img_url: '/Lucky.png', description: 'This audio helps reprogram your mindset, attracting positivity, success, and abundance effortlessly into your life.' },
-  { title: 'Remove Social Anxiety', page_url: 'https://shop.beacons.ai/talesio/40e84676-961f-45f4-a0de-1e528988c984', img_url: '/Anxiety.png', description: 'This audio helps empower you to overcome social anxiety and build confidence effortlessly in any situation.' },
-  { title: 'Get Toned Abs', page_url: 'https://shop.beacons.ai/talesio/4889b203-3929-4702-910a-0ef5e8134c97', img_url: '/Abs.png', description: 'This audio helps to build and motivate your body to achieve toned abs and a stronger core effortlessly.' },
-  { title: 'Subliminal Bundle', page_url: 'https://shop.beacons.ai/talesio/343699d1-2c2a-4415-ab5f-38eb4c998fd0', img_url: '/Bundle.png', description: 'This is a collection that combines all three subliminals into one product that will help you achieve your goals.' }
+  { title: 'Lucky Girl Syndrome', page_url2:'/library/lucky-girl-syndrome', page_url: 'https://shop.beacons.ai/talesio/8c7b3857-1c69-4935-8a71-a9f484b1f23c', img_url: '/Lucky.png', description: 'This audio helps reprogram your mindset, attracting positivity, success, and abundance effortlessly into your life.' },
+  { title: 'Remove Social Anxiety', page_url2:'/library/remove-social-anxiety', page_url: 'https://shop.beacons.ai/talesio/40e84676-961f-45f4-a0de-1e528988c984', img_url: '/Anxiety.png', description: 'This audio helps empower you to overcome social anxiety and build confidence effortlessly in any situation.' },
+  { title: 'Get Toned Abs', page_url2:'/library/get-toned-abs', page_url: 'https://shop.beacons.ai/talesio/4889b203-3929-4702-910a-0ef5e8134c97', img_url: '/Abs.png', description: 'This audio helps to build and motivate your body to achieve toned abs and a stronger core effortlessly.' },
+  { title: 'Subliminals Bundle', page_url2:'/library/subliminals-bundle', page_url: 'https://shop.beacons.ai/talesio/343699d1-2c2a-4415-ab5f-38eb4c998fd0', img_url: '/Bundle.png', description: 'This is a collection that combines all three subliminals into one product that will help you achieve your goals.' }
 ];
 
 const testimonials = [
@@ -158,10 +158,18 @@ const testimonials = [
               </a>
             </div>
           </a>
+          <div>
+            <a
+              href={item.page_url2} 
+              class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
+            >
+              About
+            </a>
+          </div>
         </div>
       ))}
     </div>
-  </div>
+    
 
   <div id="countdown" class="text-center py-8 text-white bg-red-600">
     <h2 class="text-3xl font-bold">DISCOUNT: 'TALESIO20'</h2> 
@@ -199,6 +207,14 @@ const testimonials = [
               </a>
             </div>
           </a>
+          <div>
+            <a
+              href={item.page_url2} 
+              class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
+            >
+              About
+            </a>
+          </div>
         </div>
       ))}
     </div>

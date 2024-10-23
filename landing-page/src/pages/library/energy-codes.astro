@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/EnergyCodes.astro';
+
+const metadata = {
+  title: 'Energy Codes eBook | Talesio',
+  description: 'Energy Codes is one of the many banned books available on Talesio. Read this captivating, controversial book that challenges conventional thinking.',
+  ignoreTitleTemplate: true,
+};
+
+const cta_url = 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA';
+
+---
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+</Layout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Energy Codes",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "Energy Codes is a banned book available on Talesio. It discusses controversial and hidden truths.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>

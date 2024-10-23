@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/BookOfWisdom.astro';
+
+const metadata = {
+  title: 'Book of Wisdom eBook | Talesio',
+  description: 'Book of Wisdom is one of the many banned books available on Talesio. Read this captivating, controversial book that challenges conventional thinking.',
+  ignoreTitleTemplate: true,
+};
+
+const cta_url = 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA';
+
+---
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+</Layout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Book of Wisdom",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "Book of Wisdom is a banned book available on Talesio. It discusses controversial and hidden truths.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>
