@@ -19,14 +19,14 @@
   "seo": {
     "title": "Worldwide Banned Books | Talesio",
     "description": "Talesio is an independent platform dedicated to sharing banned books from around the world. Now available for everyone.",
-    "canonical": "https://talesio.xyz"
+    "canonical": "https://www.talesio.xyz"
   },
   "theme": {
     "color": "#ff04db"
   },
   "author": {
-    "name": "Emani Caric",
+    "name": "kurac",
     "email": "contact@talesio.xyz",
-    "location": "Emani Caric"
+    "location": "kurac"
   }
 }

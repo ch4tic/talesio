@@ -48,6 +48,6 @@ export const footerData = {
   ],
   footNote: `
     
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://talesio.xyz"> Talesio</a> · All rights reserved.
+    Made by <a class="text-blue-600 underline dark:text-muted" href="https://www.talesio.xyz"> Talesio</a> · All rights reserved.
   `,
 };
