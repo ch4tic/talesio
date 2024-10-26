@@ -69,30 +69,7 @@ const testimonials = [
 ---
 
 <Layout metadata={metadata}>
-  <div id="halloween-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 hidden">
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-96 text-center relative">
-      <button id="close-popup" class="absolute top-2 right-2 text-white font-bold">&times;</button>
-      <h2 class="text-2xl text-orange-400 font-bold mb-4">🎃 HALLOWEEN BUNDLE 🎃</h2>
-      <p class="text-lg mb-4">Two books bundle for 50% OFF!</p>
-      <a href="https://shop.beacons.ai/talesio/f5761459-c9cd-4f1b-94d7-1af5e32521c5" class="inline-block bg-orange-500 text-white font-bold py-2 px-4 rounded hover:bg-orange-600 transition">
-        Read Now
-      </a>
-    </div>
-  </div>
-  <style>
-    #halloween-popup {
-      display: none; 
-    }
-
-    #halloween-popup.show {
-      display: flex;
-    }
-    #halloween-popup button#close-popup:hover {
-      color: #ff6347; 
-    }
-  </style>
-
-  <Hero
+   <Hero
     actions={[
       {
         variant: 'primary',
