@@ -15,6 +15,14 @@ const callToAction = {
   text: 'Take Action Now', 
 };
 
+// Halloween Bundle Listing
+const halloweenBundle = {
+  title: '🎃 The Halloween Bundle 🎃',
+  page_url: 'https://shop.beacons.ai/talesio/f5761459-c9cd-4f1b-94d7-1af5e32521c5',
+  img_url: '/HalloweenBundle.png',
+  description: 'Get two books for the price of one! This Halloween, dive into our most selling books The Suppressed Education and Arcane Stance.',
+};
+
 const books = [
   { title: 'Magnetic Aura', page_url2:'/library/magnetic-aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
   { title: 'Arcane Stance', page_url2:'/library/arcane-stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
@@ -32,44 +40,10 @@ const subliminals = [
   { title: 'Get Toned Abs', page_url2:'/library/get-toned-abs', page_url: 'https://shop.beacons.ai/talesio/4889b203-3929-4702-910a-0ef5e8134c97', img_url: '/Abs.png', description: 'This audio helps to build and motivate your body to achieve toned abs and a stronger core effortlessly.' },
   { title: 'Subliminals Bundle', page_url2:'/library/subliminals-bundle', page_url: 'https://shop.beacons.ai/talesio/343699d1-2c2a-4415-ab5f-38eb4c998fd0', img_url: '/Bundle.png', description: 'This is a collection that combines all three subliminals into one product that will help you achieve your goals.' }
 ];
-
-const testimonials = [
-  {
-    testimonial: `I stumbled upon Talesio while searching for banned books, and I'm so glad I did! The collection is impressive, covering titles I never knew existed. The site is user-friendly, making it super easy to browse and download. Plus, I love the idea of supporting the freedom to read. If you're into thought-provoking literature, definitely check this place out.`,
-    name: 'Anna W.',
-    job: 'Verified Reader',
-    image: {
-      img_url: '/Anonymous.jpeg',
-      alt: 'Reader Anna W.',
-    },
-    rating: 5,
-  },
-  {
-    testimonial: `Talesio is a gem! I was blown away by the variety of banned books they have. It's not just about the books, though; the whole vibe of the site is really inviting. Downloading was a breeze, and the selection has opened my eyes to some amazing stories. Highly recommend for anyone who loves to read something a little outside the norm!`,
-    name: 'Laura M.',
-    job: 'Verified Reader',
-    image: {
-      img_url: '/Anonymous.jpeg',
-      alt: 'Reader Laura M.',
-    },
-    rating: 5,
-  },
-  {
-    testimonial: `I can’t say enough good things about Talesio! The library of banned books is fantastic, with titles that really challenge the status quo. I appreciate how easy it is to navigate the site, and the downloads are super quick. It's refreshing to find a platform that champions these important voices. If you're a reader looking for something different, this is the place to go!`,
-    name: 'David P.',
-    job: 'Verified Reader',
-    image: {
-      img_url: '/Anonymous.jpeg',
-      alt: 'Reader David P.',
-    },
-    rating: 5,
-  },
-];
-
 ---
 
 <Layout metadata={metadata}>
-   <Hero
+  <Hero
     actions={[
       {
         variant: 'primary',
@@ -105,6 +79,19 @@ const testimonials = [
     ]}
   />
 
+  <!-- Halloween Bundle Section -->
+  <div class="text-center py-12 bg-black text-white rounded-lg my-10 mx-auto max-w-2xl">
+    <h2 class="text-4xl font-bold mb-4">{halloweenBundle.title}</h2>
+    <img src={halloweenBundle.img_url} alt={halloweenBundle.title} class="mx-auto w-full max-w-[500px] rounded-lg" />
+    <p class="text-lg mt-4">{halloweenBundle.description}</p>
+    <a
+      href={halloweenBundle.page_url}
+      class="inline-block mt-6 px-6 py-3 bg-orange-500 hover:bg-orange-700 text-white font-bold text-lg rounded-lg transition duration-300"
+    >
+      Get the Halloween Bundle
+    </a>
+  </div>
+
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
     <Headline title={'Banned E-Books Library'} />
 
@@ -124,42 +111,20 @@ const testimonials = [
             </div>
             <div class="text-center mt-4">
               <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-300 mt-1">{item.description}</p> 
-            </div>
-            <div>
-              <a
-                href={item.page_url}
-                class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
-              >
-                Read Now
-              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 mt-2">{item.description}</p>
             </div>
           </a>
-          <div>
-            <a
-              href={item.page_url2} 
-              class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
-            >
-              About
-            </a>
-          </div>
+          <a href={item.page_url2} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">View in Library</a>
         </div>
       ))}
     </div>
-    
-
-  <div id="countdown" class="text-center py-8 text-white bg-red-600">
-    <h2 class="text-3xl font-bold">DISCOUNT: 'TALESIO20'</h2> 
-    <p class="text-xl">Code expires in:</p>
-    <div id="timer2" class="text-4xl font-bold mt-4"></div>
   </div>
-
+  
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'Banned Subliminals Library'} />
-
-    <div id="subliminals-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
+    <Headline title={'Subliminal Audios'} />
+    <div class="gap-8 w-full grid grid-cols-1 md:grid-cols-4">
       {subliminals.map((item) => (
-        <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6 ">
+        <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
           <a href={item.page_url}>
             <div>
               <img
@@ -173,68 +138,15 @@ const testimonials = [
             </div>
             <div class="text-center mt-4">
               <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-300 mt-1">{item.description}</p> 
-            </div>
-            <div>
-              <a
-                href={item.page_url}
-                class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-theme hover:bg-book-hover focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
-              >
-                Listen Now
-              </a>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 mt-2">{item.description}</p>
             </div>
           </a>
-          <div>
-            <a
-              href={item.page_url2} 
-              class="w-full mt-4 flex items-center justify-center border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-700 focus:outline-none transition py-2 duration-300 ease-in-out md:py-1 md:text-lg md:px-10"
-            >
-              About
-            </a>
-          </div>
+          <a href={item.page_url2} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">View in Library</a>
         </div>
       ))}
-    </div>
-  </div>
-
-
-  <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'What Readers Are Saying...'} />
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {testimonials.map((testimonial) => (
-        <div class="flex flex-col p-6 rounded-lg shadow-md bg-white dark:bg-slate-900">
-          <div class="flex items-center mb-4">
-            <img src={testimonial.image.img_url} alt={testimonial.image.alt} class="w-12 h-12 rounded-full mr-3" />
-            <div>
-              <h4 class="text-lg font-semibold text-black dark:text-white">{testimonial.name}</h4>
-              <p class="text-sm text-gray-500">{testimonial.job}</p>
-              <div class="flex mt-1">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <svg key={i} class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                    <polygon points="10 15.27 16.18 20 14.54 12.97 20 8.36 12.91 8.13 10 1 7.09 8.13 0 8.36 5.46 12.97 3.82 20 10 15.27" />
-                  </svg>
-                ))}
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-700 dark:text-gray-300">{testimonial.testimonial}</p>
-        </div>
-      ))}
-    </div>
-    <div class="mt-8 text-center">
-      <a 
-        href={callToAction.href} 
-        target={callToAction.target} 
-        class="text-lg font-semibold text-book-theme hover:underline" 
-        aria-label={callToAction.text}
-      >
-        {callToAction.text}
-        <span class="ml-2">{callToAction.icon}</span>
-      </a>
     </div>
   </div>
 </Layout>
-
 <script>
   document.getElementById('scroll-button').addEventListener('click', function () {
     document.getElementById('books-container').scrollIntoView({ behavior: 'smooth' });
