@@ -3,7 +3,7 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'E-Books',  
+      text: 'Books',  
       href: getPermalink('/#books-container'),
     },
     {
@@ -11,8 +11,12 @@ export const headerData = {
       href: getPermalink('/#subliminals-container'),
     },
     {
-      text: 'About Us',  
+      text: 'About',  
       href: getPermalink('/about'),
+    },
+    {
+      text: 'Contact',  
+      href: getPermalink('/contact'),
     }
   ],
 };

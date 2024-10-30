@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'Contact Us | Talesio',
+  ignoreTitleTemplate: true,
+};
+
+const callToAction = {
+  href: '/#books-container', // Replace with your store's URL
+  target: '_self',
+  text: 'Take Action Now',
+};
+
+---
+
+<Layout metadata={metadata}>
+  <section class="text-center py-10 md:py-16">
+    <div class="md:mx-auto w-full max-w-3xl py-6 text-gray-700 dark:text-gray-300">
+      <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+      <p class="text-lg mb-4">
+        If you have any questions or request a refund of your purchases, please reach out to us.
+      </p>
+      <p class="text-lg">
+        Email: <a href="mailto:support@talesio.com" class="text-book-theme hover:underline">contact@talesio.xyz</a><br />
+      </p>
+    </div>
+
+    {/* Money-Back Guarantee Section */}
+    <div class="md:mx-auto w-full max-w-3xl py-6 text-gray-700 dark:text-gray-300">
+      <h2 class="text-2xl font-semibold mb-4">100% Money-Back Guarantee</h2>
+      <p class="text-lg">
+        We are confident in the value of our products and want you to be satisfied with your purchase. If for any reason you're not completely happy within the first 30 days, we offer a no-questions-asked, full refund. Simply contact us at the email above, and we'll handle your request swiftly.
+      </p>
+    </div>
+
+    {/* Countdown Promotion Section */}
+    <div id="countdown" class="text-center py-8 text-white bg-red-600 mt-8">
+      <h2 class="text-3xl font-bold">20% OFF! Use code 'TALESIO20'</h2>
+      <p class="text-xl">The sale ends in:</p>
+      <div id="timer2" class="text-4xl font-bold mt-4"></div>
+    </div>
+
+    {/* Call to Action Button */}
+    <div class="mt-8 text-center">
+      <a 
+        href={callToAction.href}
+        target={callToAction.target}
+        class="text-lg font-semibold text-book-theme hover:underline"
+        aria-label={callToAction.text}
+      >
+        {callToAction.text}
+        <span class="ml-2">{callToAction.icon}</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function countdown() {
+    const timerDisplay = document.getElementById('timer2');
+    const now = new Date().getTime();
+    const endTime = new Date(now + (6 * 60 * 60 * 1000)).getTime();
+    localStorage.setItem('endTime', endTime);
+
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const storedEndTime = parseInt(localStorage.getItem('endTime'), 10);
+      const distance = storedEndTime - currentTime;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        timerDisplay.innerHTML = "Time's up!";
+        localStorage.removeItem('endTime');
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  countdown();
+</script>
