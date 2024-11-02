@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroSection from '~/components/nestedPages/TheSuppressedEducation.astro';
+
+const metadata = {
+  title: 'The Skin Radiance Recipe eBook | Talesio',
+  description: 'The Skin Radiance Recipe is a thought-provoking banned book available on Talesio. Delve into its controversial exploration of skin care & solving acne issues that have been hidden from the public eye.',
+  ignoreTitleTemplate: true,
+};
+
+const cta_url = 'https://theskinradiancerecipe.com/shop/6042a568-4a39-47d3-b003-baff03cda9ec';
+
+---
+
+<div id="countdown" class="text-center py-8 text-white bg-red-600">
+  <h2 class="text-3xl font-bold">20% OFF! 'TALESIO20'</h2> 
+  <p class="text-xl">The sale ends in:</p>
+  <div id="timer" class="text-4xl font-bold mt-4"></div>
+</div>
+
+<Layout metadata={metadata}>
+  <HeroSection cta_url={cta_url} />
+</Layout>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Skin Radiance Recipe",
+  "author": {
+    "@type": "Person",
+    "name": "Author Name"
+  },
+  "description": "The Skin Radiance Recipe is a banned book that uncovers hidden methods of skin care and solving acne issues.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Talesio"
+  }
+}
+</script>
+
+<script>
+  // Persistent Countdown Timer Script for 13 hours
+  function countdown() {
+    const timerDisplay = document.getElementById('timer');
+    const now = new Date().getTime();
+
+    // Check if the 'endTime' is already stored in localStorage
+    let endTime = localStorage.getItem('endTime');
+
+    // If there's no 'endTime' in localStorage, set it to 13 hours from now
+    if (!endTime) {
+      const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
+      localStorage.setItem('endTime', endTime);
+    }
+
+    // Convert the stored string back into a number
+    endTime = parseInt(endTime, 10);
+
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const distance = endTime - currentTime;
+
+      // If the countdown is over, clear the interval and display "Time's up!"
+      if (distance < 0) {
+        clearInterval(interval);
+        timerDisplay.innerHTML = "Time's up!";
+        localStorage.removeItem('endTime'); // Optionally clear the end time from localStorage
+        return;
+      }
+
+      // Calculate hours, minutes, and seconds remaining
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      timerDisplay.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
+
+  countdown();
+</script>

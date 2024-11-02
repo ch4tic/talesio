@@ -15,15 +15,8 @@ const callToAction = {
   text: 'Take Action Now', 
 };
 
-// Halloween Bundle Listing
-const halloweenBundle = {
-  title: '🎃 The Halloween Bundle 🎃',
-  page_url: 'https://shop.beacons.ai/talesio/f5761459-c9cd-4f1b-94d7-1af5e32521c5',
-  img_url: '/HalloweenBundle.png',
-  description: 'Get two books for the price of one! This Halloween, dive into our most selling books The Suppressed Education and Arcane Stance.',
-};
-
 const books = [
+  { title: 'Skin Radiance Recipe', page_url2:'/library/the-skin-radiance-recipe', page_url: 'https://theskinradiancerecipe.com/shop/6042a568-4a39-47d3-b003-baff03cda9ec', img_url: '/TheSkinRadianceEbook.png', description: 'A playbook on solving skill problems and resolving acne issues.' },
   { title: 'Magnetic Aura', page_url2:'/library/magnetic-aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
   { title: 'Arcane Stance', page_url2:'/library/arcane-stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
   { title: 'Suppressed Education', page_url2:'/library/the-suppressed-education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png', description: 'Detailed book full of essential knowledge overlooked by traditional education systems.' },
@@ -31,7 +24,6 @@ const books = [
   { title: 'Human Health Guide', page_url2:'/library/human-health-guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png', description: 'Book teaching essential foods, oils, and practices for enhancing vitality and overall well-being.' },
   { title: 'Book of Wisdom', page_url2:'/library/book-of-wisdom', page_url: 'https://revivalofwisdom.com/products/book-of-wisdom-pdf-english?sca_ref=7186286.vYxyAp6dwA', img_url: '/BookOfWisdom.png', description: 'Insights and esoteric knowledge to awaken your wisdom and connect with the universe.' },
   { title: 'Alkaline Awakening', page_url2:'/library/alkaline-awakening', page_url: 'https://revivalofwisdom.com/products/alkaline-awakening-book?sca_ref=7186286.vYxyAp6dwA', img_url: '/Alkaline.png', description: 'Guide with over 126 recipes, in-depth knowledge on alkalinity, fasting, and detoxification.' },
-  { title: 'The Wisdom Bundle', page_url2:'/library/the-wisdom-bundle', page_url: 'https://revivalofwisdom.com/products/the-wisdom-bundle?sca_ref=7186286.vYxyAp6dwA', img_url: '/TheWisdomBundle.png', description: 'Bundle with the Book of Wisdom, Human Health Guide and Manifestation Mastery.' },
 ];
 
 const subliminals = [
@@ -79,19 +71,6 @@ const subliminals = [
     ]}
   />
 
-  <!-- Halloween Bundle Section -->
-  <div class="text-center py-12 bg-black text-white rounded-lg my-10 mx-auto max-w-2xl">
-    <h2 class="text-4xl font-bold mb-4">{halloweenBundle.title}</h2>
-    <img src={halloweenBundle.img_url} alt={halloweenBundle.title} class="mx-auto w-full max-w-[500px] rounded-lg" />
-    <p class="text-lg mt-4">{halloweenBundle.description}</p>
-    <a
-      href={halloweenBundle.page_url}
-      class="inline-block mt-6 px-6 py-3 bg-orange-500 hover:bg-orange-700 text-white font-bold text-lg rounded-lg transition duration-300"
-    >
-      Get the Halloween Bundle
-    </a>
-  </div>
-
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
     <Headline title={'Banned E-Books Library'} />
 
@@ -114,7 +93,7 @@ const subliminals = [
               <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 mt-2">{item.description}</p>
             </div>
           </a>
-          <a href={item.page_url2} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">View in Library</a>
+          <a href={item.page_url} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">Read Now</a>
         </div>
       ))}
     </div>
