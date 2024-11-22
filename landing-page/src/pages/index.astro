@@ -46,8 +46,8 @@ const subliminals = [
     ]}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">Explore </span>
-      <span class="text-book-theme"> Banned</span> E-Books
+      <span class="text-accent dark:text-white highlight">Read </span>
+      <span class="text-book-theme"> Forbidden</span> Books
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
@@ -57,7 +57,7 @@ const subliminals = [
   </Hero>
 
   <div id="countdown" class="text-center py-8 text-white bg-red-600">
-    <h2 class="text-3xl font-bold">20% OFF! USE CODE: TALESIO20</h2> 
+    <h2 class="text-3xl font-bold">BLACK FRIDAY IS HERE! <br>CODE: TALESIO20</h2> 
     <p class="text-xl">Sale ends in:</p>
     <div id="timer" class="text-4xl font-bold mt-4"></div>
   </div>
@@ -65,13 +65,44 @@ const subliminals = [
   <Stats
     stats={[
       { title: 'Banned Books', amount: '8' },
-      { title: 'Total Downloads', amount: '23.8K' },
+      { title: 'Total Downloads', amount: '26.8K' },
       { title: 'Subliminals', amount: '3' },
     ]}
   />
 
+<div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
+  <Headline title={'MOST-POPULAR CHOICES'} />
+
+  <div id="most-popular-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
+    {books
+      .filter((item) => ['Magnetic Aura', 'Arcane Stance', 'Suppressed Education', 'Book of Wisdom'].includes(item.title))
+      .map((item) => (
+        <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
+          <a href={item.page_url}>
+            <div>
+              <img
+                class="mx-auto w-60 rounded-md"
+                style="aspect-ratio: 4 / 6;"
+                src={item.img_url}
+                alt={item.title}
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
+                loading="lazy"
+              />
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 mt-2">{item.description}</p>
+            </div>
+          </a>
+          <a href={item.page_url} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">Read Now</a>
+        </div>
+      ))}
+  </div>
+</div>
+  
+
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'Banned E-Books Library'} />
+    <Headline title={'BANNED BOOKS LIBRARY'} />
 
     <div id="books-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
       {books.map((item) => (
@@ -109,7 +140,7 @@ const subliminals = [
   </div>
   
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-    <Headline title={'Subliminal Audios'} />
+    <Headline title={'SUBLIMINAL AUDIOS'} />
     <div class="gap-8 w-full grid grid-cols-1 md:grid-cols-4">
       {subliminals.map((item) => (
         <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
@@ -160,7 +191,7 @@ const subliminals = [
     const now = new Date().getTime();
     
     // Calculate the end time (6 hours from now)
-    const endTime = new Date(now + (3 * 60 * 60 * 1000)).getTime();
+    const endTime = new Date(now + (2 * 60 * 60 * 1000)).getTime();
 
     // Store the end time in local storage as UTC
     localStorage.setItem('endTime', endTime);
