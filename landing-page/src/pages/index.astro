@@ -16,8 +16,9 @@ const callToAction = {
 };
 
 const books = [
-  { title: 'Magnetic Aura', page_url2:'/library/magnetic-aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
+  { title: 'Magnetic Aura Part I', page_url2:'/library/magnetic-aura', page_url: 'https://shop.beacons.ai/talesio/0a5c8e68-10b9-44c0-83ec-3fef02f55e54', img_url: '/MagneticAura.png', description: 'A practical guide filled with steps to boost confidence, charisma and attraction.' },
   { title: 'Arcane Stance', page_url2:'/library/arcane-stance', page_url: 'https://shop.beacons.ai/talesio/f8c213cc-2cb3-4517-86c1-d33797e95e7c', img_url: '/ArcaneStance.png', description: 'Book that reveals body language secrets to enhance authority and social dominance.' },
+  { title: 'Vibrations of Manifestation', page_url2:'/library/vibrations-of-manifestation', page_url: 'https://vibrationsofmanifestation.com/shop/56af0ed0-f904-4aae-aea8-75f7c903e849', img_url: '/VibrationsOfManifestation.png', description: 'A practical guide filled with steps to manifest your dream life.' },
   { title: 'Suppressed Education', page_url2:'/library/the-suppressed-education', page_url: 'https://shop.beacons.ai/talesio/bffb7d4c-fb49-457f-a306-c3d7e0a9f37f', img_url: '/TheSuppressedEducation.png', description: 'Detailed book full of essential knowledge overlooked by traditional education systems.' },
   { title: 'Energy Codes', page_url2:'/library/energy-codes', page_url: 'https://revivalofwisdom.com/products/vibrational-energy-codes-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/VibrationalEnergyCodes.png', description: 'Guide to manifesting abundance and positivity and unique ways of raising vibrational frequency.' },
   { title: 'Human Health Guide', page_url2:'/library/human-health-guide', page_url: 'https://revivalofwisdom.com/products/human-health-guide-pdf?sca_ref=7186286.vYxyAp6dwA', img_url: '/HumanHealthGuide.png', description: 'Book teaching essential foods, oils, and practices for enhancing vitality and overall well-being.' },
@@ -57,7 +58,7 @@ const subliminals = [
   </Hero>
 
   <div id="countdown" class="text-center py-8 text-white bg-red-600">
-    <h2 class="text-3xl font-bold">CHRISTMAS IS HERE! <br>CODE: TALESIO20</h2> 
+    <h2 class="text-3xl font-bold">DISCOUNT CODE: TALESIO20</h2> 
     <p class="text-xl">Code expires in:</p>
     <div id="timer" class="text-4xl font-bold mt-4"></div>
   </div>
@@ -69,37 +70,6 @@ const subliminals = [
       { title: 'Subliminals', amount: '3' },
     ]}
   />
-
-<div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
-  <Headline title={'MOST-POPULAR CHOICES'} />
-
-  <div id="most-popular-container" class="gap-8 w-full grid grid-cols-1 md:grid-cols-4 mb-5">
-    {books
-      .filter((item) => ['Magnetic Aura', 'Arcane Stance', 'Suppressed Education', 'Book of Wisdom'].includes(item.title))
-      .map((item) => (
-        <div class="mx-auto md:mx-0 w-2/3 md:w-64 flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6">
-          <a href={item.page_url}>
-            <div>
-              <img
-                class="mx-auto w-60 rounded-md"
-                style="aspect-ratio: 4 / 6;"
-                src={item.img_url}
-                alt={item.title}
-                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 432px"
-                loading="lazy"
-              />
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="text-lg font-semibold text-black dark:text-white">{item.title}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 mt-2">{item.description}</p>
-            </div>
-          </a>
-          <a href={item.page_url} target="_blank" class="mt-auto inline-block text-center w-full px-4 py-2 bg-orange-500 text-white font-bold rounded-lg">Read Now</a>
-        </div>
-      ))}
-  </div>
-</div>
-  
 
   <div class="md:mx-auto w-full max-w-7xl py-12 md:py-20">
     <Headline title={'BANNED BOOKS LIBRARY'} />
